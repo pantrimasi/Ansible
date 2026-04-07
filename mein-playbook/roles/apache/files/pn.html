@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Notice Loop</title>
+    <style>
+        body { font-family: Arial, sans-serif; background:#2b2b2b; color:#aeb8c4; line-height:1.7; padding:20px;}
+        h2 { margin-top:40px; border-bottom:1px solid #444; padding-bottom:10px;}
+        p { color:#9ca6b8; margin:12px 0;}
+    </style>
+</head>
+<body>
+
+<div id="container">
+    <h1>Privacy Notice</h1>
+    <p>Last updated: April 2026</p>
+</div>
+
+<script>
+    // Original section template
+    const sections = [
+        {
+            title: "Account Registration Data",
+            paragraphs: [
+                `When a user initiates the registration process, the system begins to collect, validate, and structure a set of core identifiers that enable persistent account functionality. This process involves receiving input data such as usernames, email addresses, and authentication credentials, then verifying format, consistency, and uniqueness before committing the data to storage. During this stage, the system may perform multiple validation passes, reject incomplete submissions, and prompt the user to correct invalid entries.`,
+                `In addition to visible fields, internal metadata is generated automatically. This may include timestamps, system-generated identifiers, and environment-specific markers that help trace the origin and context of the registration. These elements are not exposed to the user directly but are essential for maintaining system integrity and ensuring traceability in case of misuse or technical issues.`,
+                `The registration process may also involve background operations such as hashing passwords, assigning roles, initializing default settings, and preparing user-specific storage areas. Each of these actions contributes to establishing a fully functional account environment. The system continuously checks for anomalies during this process, such as repeated attempts, inconsistent data patterns, or suspicious input behavior.`
+            ]
+        },
+        {
+            title: "Authentication and Identity Verification",
+            paragraphs: [
+                `Authentication mechanisms are designed to repeatedly verify identity throughout the lifecycle of a user session. When credentials are submitted, the system compares them against securely stored representations, often using hashing and salting techniques. This comparison process must be both accurate and resistant to timing attacks, ensuring that unauthorized access attempts do not reveal useful information.`,
+                `In addition to primary credentials, the system may initiate secondary verification steps, including token validation, device recognition, or time-based confirmation codes. These mechanisms operate together to strengthen access control while maintaining usability. Each authentication event is logged, analyzed, and evaluated against known patterns to detect irregularities.`,
+                `The system may temporarily store authentication artifacts such as session tokens, refresh tokens, or cryptographic proofs. These elements are tightly controlled, expire automatically, and are invalidated upon logout or suspicious activity. Continuous verification may occur in the background to ensure that session integrity remains intact over time.`
+            ]
+        },
+        {
+            title: "Session Handling and Continuity",
+            paragraphs: [
+                `Once a user is authenticated, a session is established to maintain continuity across multiple interactions. This session acts as a bridge between requests, allowing the system to recognize the user without requiring repeated authentication. Sessions are typically represented by secure tokens that are transmitted and validated with each request.`,
+                `The system actively monitors session behavior, including duration, activity frequency, and device consistency. If anomalies are detected, such as sudden changes in location or usage patterns, the session may be restricted or terminated. This ensures that sessions cannot be easily hijacked or misused.`,
+                `Session expiration is enforced through both idle timeouts and absolute limits. When a session ends, associated tokens are invalidated, and any temporary data is cleared. This prevents residual data from being reused in unintended ways and reinforces overall system security.`
+            ]
+        },
+        {
+            title: "Device and Environment Data",
+            paragraphs: [
+                `Once a user is authenticated, a session is established to maintain continuity across multiple interactions. This session acts as a bridge between requests, allowing the system to recognize the user without requiring repeated authentication. Sessions are typically represented by secure tokens that are transmitted and validated with each request.`,
+                `The system actively monitors session behavior, including duration, activity frequency, and device consistency. If anomalies are detected, such as sudden changes in location or usage patterns, the session may be restricted or terminated. This ensures that sessions cannot be easily hijacked or misused.`,
+                `Session expiration is enforced through both idle timeouts and absolute limits. When a session ends, associated tokens are invalidated, and any temporary data is cleared. This prevents residual data from being reused in unintended ways and reinforces overall system security.`
+            ]
+        },
+        {
+            title: "Network and Connection Data",
+            paragraphs: [
+                `Once a user is authenticated, a session is established to maintain continuity across multiple interactions. This session acts as a bridge between requests, allowing the system to recognize the user without requiring repeated authentication. Sessions are typically represented by secure tokens that are transmitted and validated with each request.`,
+                `The system actively monitors session behavior, including duration, activity frequency, and device consistency. If anomalies are detected, such as sudden changes in location or usage patterns, the session may be restricted or terminated. This ensures that sessions cannot be easily hijacked or misused.`,
+                `Session expiration is enforced through both idle timeouts and absolute limits. When a session ends, associated tokens are invalidated, and any temporary data is cleared. This prevents residual data from being reused in unintended ways and reinforces overall system security.`
+            ]
+        },
+        {
+            title: "Cookies and Tracking Technologies",
+            paragraphs: [
+                `Once a user is authenticated, a session is established to maintain continuity across multiple interactions. This session acts as a bridge between requests, allowing the system to recognize the user without requiring repeated authentication. Sessions are typically represented by secure tokens that are transmitted and validated with each request.`,
+                `The system actively monitors session behavior, including duration, activity frequency, and device consistency. If anomalies are detected, such as sudden changes in location or usage patterns, the session may be restricted or terminated. This ensures that sessions cannot be easily hijacked or misused.`,
+                `Session expiration is enforced through both idle timeouts and absolute limits. When a session ends, associated tokens are invalidated, and any temporary data is cleared. This prevents residual data from being reused in unintended ways and reinforces overall system security.`
+            ]
+        },
+        {
+            title: "Third-Party Service Integration",
+            paragraphs: [
+                `Once a user is authenticated, a session is established to maintain continuity across multiple interactions. This session acts as a bridge between requests, allowing the system to recognize the user without requiring repeated authentication. Sessions are typically represented by secure tokens that are transmitted and validated with each request.`,
+                `The system actively monitors session behavior, including duration, activity frequency, and device consistency. If anomalies are detected, such as sudden changes in location or usage patterns, the session may be restricted or terminated. This ensures that sessions cannot be easily hijacked or misused.`,
+                `Session expiration is enforced through both idle timeouts and absolute limits. When a session ends, associated tokens are invalidated, and any temporary data is cleared. This prevents residual data from being reused in unintended ways and reinforces overall system security.`
+            ]
+        }
+    ];
+
+    // Repeat sections loop
+    const container = document.getElementById('container');
+    const repeatCount = 2000; // z.B. 20-mal wiederholen
+    let counter = 1;
+
+    for (let i = 0; i < repeatCount; i++) {
+        sections.forEach(sec => {
+            const h2 = document.createElement('h2');
+            h2.textContent = `${counter}. ${sec.title}`;
+            container.appendChild(h2);
+            sec.paragraphs.forEach(pText => {
+                const p = document.createElement('p');
+                p.textContent = pText;
+                container.appendChild(p);
+            });
+            counter++;
+        });
+    }
+</script>
+
+</body>
+</html>
