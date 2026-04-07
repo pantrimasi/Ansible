@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+ <title>jinja.com</title>
+ <link rel="icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/wcAAgMBApWzZ/AAAAAASUVORK5CYII=" type="image/png">
+ <style>
+  /* Variables for colors and fonts */
+  :root {
+   --main-bg-color: #2b2b2b;
+   --main-text-color: #aeb8c4;
+   --link-color: #163b50;
+   --related-search-bg: #02198b;
+   --related-search-hover: #000f5a;
+   --accent-color: #163b50;
+   --secondary-text-color: #9ca6b8;
+   --font-family: "Arial", sans-serif;
+   --base-font-size: 16px;
+  }
+
+  /* Global Styles */
+  html {
+   font-size: var(--base-font-size);
+  }
+
+  body, html {
+   margin: 0;
+   padding: 0;
+   border: 0;
+   display: flex;
+   flex-direction: column;
+   font-family: var(--font-family);
+   background: var(--main-bg-color);
+   color: var(--main-text-color);
+   text-align: center;
+  }
+
+  a {
+   color: var(--link-color);
+   text-decoration: none;
+  }
+
+  a:hover {
+   text-decoration: underline;
+  }
+
+  h1 {
+   font-size: clamp(1.5rem, 5vw, 2rem);
+   margin: 1rem 0;
+   white-space: normal;
+   text-align: center;
+   text-transform: uppercase;
+   font-weight: 300;
+  }
+
+  #container {
+   display: flex;
+   flex-direction: column;
+   min-height: 100vh;
+   box-sizing: border-box;
+  }
+
+  header {
+   padding-top: 2rem;
+  }
+
+  main {
+   flex: 1;
+   width: 95%;
+   max-width: 700px;
+   margin: 0 auto;
+   box-sizing: border-box;
+  }
+
+  footer {
+   font-size: 0.75rem;
+   padding: 1.5rem 0;
+   margin-top: 2rem;
+  }
+
+  footer p {
+   margin: 0.5rem 0;
+  }
+
+  /* Related Searches Section */
+  #related-searches-section {
+   margin: 3rem 0;
+  }
+
+  .section-label {
+   font-size: 0.875rem;
+   color: #9ca6b8;
+   text-align: left;
+   margin-bottom: 1rem;
+   text-transform: uppercase;
+   letter-spacing: 0.5px;
+  }
+
+  .related-searches-container {
+   display: flex;
+   flex-direction: column;
+   gap: 1rem;
+   max-width: 700px;
+   margin: 0 auto;
+  }
+
+  .related-search-link {
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   background: var(--related-search-bg);
+   color: white;
+   padding: 1.5rem 1.5rem;
+   border-radius: 16px;
+   font-size: 1.25rem;
+   font-weight: bold;
+   text-decoration: none;
+   transition: all 0.3s ease;
+   border: 3px solid white;
+  }
+
+  .related-search-link:hover {
+   background: var(--related-search-hover);
+   border-color: white;
+   transform: scale(1.02);
+   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+   text-decoration: none;
+  }
+
+  .related-search-text {
+   flex: 1;
+   text-align: left;
+   font-weight: 700;
+  }
+
+  .related-search-arrow {
+   font-size: 1.5rem;
+   transition: transform 0.3s ease;
+   text-decoration: none;
+  }
+
+  .related-search-link:hover .related-search-arrow {
+   transform: scale(1.2);
+  }
+
+  /* Top Banner Styles */
+  #banner {
+   width: 100%;
+   color: var(--contact-bar-text);
+   padding: 10px 0;
+   text-align: center;
+   transition: opacity 0.3s ease;
+   opacity: 0;
+  }
+
+  #banner a {
+   color: var(--contact-bar-text);
+   text-decoration: none;
+  }
+
+  #banner a:hover {
+   text-decoration: underline;
+  }
+
+  /* Responsive Design */
+  @media screen and (max-width: 480px) {
+   .related-search-link {
+    padding: 1.5rem 1.5rem;
+    font-size: 1.25rem;
+   }
+
+   .related-search-arrow {
+    font-size: 1.25rem;
+   }
+
+   footer {
+    padding: 1rem 0;
+   }
+  }
+
+  @media screen and (min-width: 481px) and (max-width: 600px) {
+   .related-search-link {
+    padding: 1.5rem 1.5rem;
+    font-size: 1.25rem;
+   }
+  }
+ </style>
+ <script>
+  class UIManager {
+   constructor() {
+    this.container = document.getElementById('container');
+    this.messageEl = document.getElementById('message');
+    this.headerEl = document.querySelector('header');
+    this.contactHeader = document.getElementById('banner');
+   }
+
+   configureContactMessage(contact) {
+    // If no contact info or method is 1 (None), don't show any contact message
+    if (!contact || !contact.method || contact.method === 1) {
+     return;
+    }
+
+    const contactEl = contact.location === 'bottom' ?
+            this.ensureContactFooter() : this.contactHeader;
+    if (!contactEl) return;
+
+    // Create contact link
+    const link = document.createElement('a');
+    link.href = '/_c';
+    link.textContent = contact.banner_text;
+    link.style.textDecoration = 'none';
+
+    // Apply styles based on contact style
+    if (contact.style === 'aggressive') {
+     contactEl.style.background = '#ff6b6b';
+     link.style.color = '#ffffff';
+     link.style.fontWeight = 'bold';
+    } else {
+     contactEl.style.background = '#646464';
+     link.style.color = '#eeeeee';
+    }
+
+    const p = document.createElement('p');
+    p.appendChild(link);
+    contactEl.innerHTML = '';
+    contactEl.appendChild(p);
+    contactEl.style.opacity = '1';
+   }
+
+   ensureContactFooter() {
+    let contactFooter = document.getElementById('contact-footer');
+    if (!contactFooter) {
+     contactFooter = document.createElement('div');
+     contactFooter.id = 'contact-footer';
+     contactFooter.style.cssText = 'position: fixed; bottom: 0; left: 0; width: 100%; opacity: 0; transition: opacity 0.3s ease; padding: 10px 0; text-align: center;';
+     document.body.appendChild(contactFooter);
+    }
+    return contactFooter;
+   }
+  }
+
+  var contactInfo = null;
+
+  window.onload = function() {
+   var uiManager = new UIManager();
+   if (contactInfo) {
+    uiManager.configureContactMessage(contactInfo);
+   }
+  };
+ </script>
+</head>
+<body>
+<div id="container">
+ <div id="banner" style="opacity: 0"></div>
+
+ <header>
+  <h1>jinja.com</h1>
+ </header>
+
+
+ <main>
+  <div id="message"></div>
+  <!-- Related Searches Section -->
+  <div id="related-searches-section">
+   <div class="section-label">SELECT AN OPTION:</div>
+   <div class="related-searches-container">
+
+    <a href="afrika.html" class="related-search-link">
+     <span class="related-search-text">Uganda Adventure Travel Packages</span>
+     <span class="related-search-arrow">▶</span>
+    </a>
+
+    <a href="japan.html" class="related-search-link">
+     <span class="related-search-text">Shinto Shrine Traditions And History</span>
+     <span class="related-search-arrow">▶</span>
+    </a>
+
+    <a href="python.html" class="related-search-link">
+     <span class="related-search-text">Python Web Development Frameworks</span>
+     <span class="related-search-arrow">▶</span>
+    </a>
+
+   </div>
+  </div>
+ </main>
+
+ <footer>
+  <p>2025 Copyright. All Rights Reserved</p>
+  <p><a href="/_pp">Privacy Policy</a></p>
+ </footer>
+</div>
+</body>
+</html>
