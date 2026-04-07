@@ -4,7 +4,7 @@
     - common
     - apache
 
-- hosts: webservers
+- hosts: aServer
   roles:
     - apache
     - vhost
