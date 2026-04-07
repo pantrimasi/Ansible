@@ -8,7 +8,7 @@ Dieses Projekt enthält ein selbst entwickeltes **Ansible-Playbook** zur automat
 
 ## Installation
 
-1. Repository klonen: git clone [Repository-URL] und danach cd mein-playbook
+1. Repository klonen: git clone https://github.com/pantrimasi/Ansible/ und danach cd mein-playbook
 
 2. Ansible installieren: sudo apt update und sudo apt install ansible -y
 
