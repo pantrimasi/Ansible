@@ -1,4 +1,5 @@
-- name: Apply common configuration
+- name: Setup aServer
   hosts: aServer
   roles:
     - common
+    - apache
