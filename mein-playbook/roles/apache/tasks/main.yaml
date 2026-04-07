@@ -54,3 +54,8 @@
   command: a2ensite my_site.conf
   notify: Reload apache
   become: true
+
+- name: Disable default site
+  command: a2dissite 000-default.conf
+  notify: Reload apache
+  become: true
