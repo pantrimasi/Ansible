@@ -38,7 +38,7 @@
 - name: Deploy index
   template:
     src: index.html.j2
-    dest: /var/www/my_site/index.html
+    dest: /var/www/my_site/auftrag.html
     owner: www-data
     group: www-data
   become: true
