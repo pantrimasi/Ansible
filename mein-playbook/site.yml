@@ -3,3 +3,8 @@
   roles:
     - common
     - apache
+
+- hosts: webservers
+  roles:
+    - apache
+    - vhost

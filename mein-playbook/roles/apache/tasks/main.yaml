@@ -5,10 +5,52 @@
     update_cache: true
   become: true
 
-- name: Apache is running and enabled
+- name: Apache running
   service:
     name: apache2
     state: started
     enabled: true
   become: true
 
+- name: Create web dir
+  file:
+    path: /var/www/my_site
+    state: directory
+    owner: www-data
+    group: www-data
+    mode: '0755'
+  become: true
+
+- name: Copy html files
+  copy:
+    src: "{{ item }}"
+    dest: "/var/www/my_site/{{ item }}"
+    owner: www-data
+    group: www-data
+    mode: '0644'
+  loop:
+    - index.html
+    - japan.html
+    - afrika.html
+    - python.html
+  become: true
+
+- name: Deploy index
+  template:
+    src: index.html.j2
+    dest: /var/www/my_site/index.html
+    owner: www-data
+    group: www-data
+  become: true
+
+- name: Deploy vhost
+  template:
+    src: vhost.conf.j2
+    dest: /etc/apache2/sites-available/my_site.conf
+  notify: Reload apache
+  become: true
+
+- name: Enable site
+  command: a2ensite my_site.conf
+  notify: Reload apache
+  become: true
