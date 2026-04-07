@@ -1,34 +1,57 @@
 # Ansible Playbook
 
-*Ein Ansible-Projekt zur automatisierten Konfiguration und Verwaltung von Servern mit eigenem Playbook und modularen Rollen.*
+*Ein Ansible-Projekt zur automatisierten Konfiguration von Servern mit eigenem Playbook und modularen Rollen.*
 
 ## Überblick
 
-Dieses Projekt enthält ein selbst entwickeltes **Ansible-Playbook** zur automatisierten Einrichtung und Verwaltung von Systemen. Der Fokus liegt auf einer klar strukturierten Rollenarchitektur, um verschiedene Dienste wie Apache, Firewall und Netzwerkanalyse effizient bereitzustellen. Das Projekt befindet sich aktuell in Entwicklung und kann flexibel um weitere Rollen und Anwendungen erweitert werden.
+Dieses Projekt enthält ein selbst erstelltes **Ansible-Playbook**, das verschiedene Dienste und Anwendungen auf einer frischen VM automatisch installiert und konfiguriert. Das Playbook ist modular aufgebaut und nutzt Rollen für Common-Settings, Apache, virtuelle Hosts, Firewall, Netzwerkanalyse (Nmap) sowie zwei wählbare Applikationen. Das Projekt befindet sich aktuell in Entwicklung.
 
-## Installation
+## Ausführung
 
-1. Repository klonen: git clone https://github.com/pantrimasi/Ansible/ und danach cd mein-playbook
+Vor der Ausführung müssen die Variablen in **group_vars/all.yml** angepasst werden, z. B.:
 
-2. Ansible installieren: sudo apt update und sudo apt install ansible -y
+- `server_name` – Hostname der VM  
+- `apache_ports` – Ports, die Apache nutzen soll  
+- `ufw_allowed_ports` – Ports, die die Firewall freigeben soll  
+- `wahlapplikation_1_config` / `wahlapplikation_2_config` – spezifische Einstellungen der Applikationen  
 
-3. Collection installieren: ansible-galaxy collection install community.general
+Um das Playbook auf einer frischen VM auszuführen, genügt ein Befehl:
 
-4. Inventory prüfen und anpassen: nano inventory/hosts.ini
+ansible-playbook -i inventory/hosts.ini site.yml
 
-5. Verbindung testen: ansible all -m ping
+## Wahlapplikationen
 
-6. Playbook ausführen: ansible-playbook -i inventory/hosts.ini site.yml
+### Wahlapplikation 1: [Applikation 1 Name]
+- **Funktion:** [Kurzbeschreibung, z. B. Datenbank, Monitoring etc.]  
+- **Warum gewählt:** [Grund, z. B. praktische Anwendung für das Projekt]  
+- **Konfiguration:** Die Rolle installiert die Applikation, richtet Benutzerrechte ein und passt die Konfigurationsdateien gemäß `group_vars/all.yml` an.
 
-## Beitrag leisten (Contributing)
+### Wahlapplikation 2: [Applikation 2 Name]
+- **Funktion:** [Kurzbeschreibung, z. B. Web-App, Proxy etc.]  
+- **Warum gewählt:** [Grund, z. B. Lernziel oder Projektanforderung]  
+- **Konfiguration:** Die Rolle installiert die Applikation, konfiguriert Dienste automatisch und sorgt dafür, dass sie über die Firewall erreichbar ist.
 
-Beiträge sind willkommen. Erstelle bei Änderungen einen Pull Request und beschreibe klar, was geändert wurde. Für Fehler oder Verbesserungsvorschläge bitte ein Issue erstellen. Achte darauf, dass neue Rollen sauber strukturiert und nachvollziehbar dokumentiert sind.
+## nmap-Ergebnis
+
+# Beispielausgabe
+Starting Nmap 7.93 ( https://nmap.org ) at 2026-04-07 10:00
+Nmap scan report for 192.168.56.101
+Host is up (0.0010s latency).
+Not shown: 995 closed ports
+PORT     STATE SERVICE
+22/tcp   open  ssh
+80/tcp   open  http
+443/tcp  open  https
+3306/tcp closed mysql
+8080/tcp open  http-proxy
+
+**Kommentar:** Die offenen Ports (22, 80, 443, 8080) entsprechen den freigegebenen Ports in unseren **UFW-Regeln**. Geschlossene Ports wie 3306 werden korrekt blockiert, sodass unautorisierte Zugriffe verhindert werden.
 
 ## Lizenz & Credits
 
-Dieses Projekt wurde von **PantriMasi** erstellt und gepflegt.  
+Dieses Projekt wurde von **PantriMasi** erstellt.  
 Verwendete Technologien: **Ansible**, **community.general Collection**
 
 ## Zusätzliche Links
 
-- Offizielle Ansible Dokumentation: https://docs.ansible.com/
+- Offizielle Ansible-Dokumentation: https://docs.ansible.com/
