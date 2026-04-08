@@ -1,0 +1,6 @@
+- name: Install psycopg2 for PostgreSQL modules
+  apt:
+    name: python3-psycopg2
+    state: present
+    update_cache: true
+  become: true

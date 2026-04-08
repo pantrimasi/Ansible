@@ -6,4 +6,5 @@
     - vhost
     - ufw
     - nmap
+    - python
     - postgresql
