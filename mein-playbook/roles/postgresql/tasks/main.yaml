@@ -6,6 +6,15 @@
       - python3-psycopg2
     state: present
 
+- name: Create PostgreSQL data directory
+  file:
+    path: /var/lib/postgresql/16/main
+    state: directory
+    owner: postgres
+    group: postgres
+    mode: '0700'
+  become: true
+
 - name: PostgreSQL cluster
   command: /usr/lib/postgresql/16/bin/initdb -D /var/lib/postgresql/16/main
   become_user: postgres
