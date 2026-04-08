@@ -46,15 +46,25 @@ PORT    STATE SERVICE
 80/tcp  open  http
 443/tcp open  https
 
-`Nmap done: 1 IP address (1 host up) scanned in 0.06 seconds`
+Nmap done: 1 IP address (1 host up) scanned in 0.06 seconds
 ```
 Port 443 war zuerst nicht offen, weil kein Dienst auf diesem Port aktiv war, obwohl er in der Firewall erlaubt wurde. Ich habe danach **SSL in Apache aktiviert**, damit der Server auf Port 443 hört und der Port im Scan sichtbar wird.
 
 # Reflexion
 ## Tag 1
+**Was war für dich neu?**
+
+**Wo bist du nicht weitergekommen und wie hast du den Blocker gelöst?**
+
+**Wo hast du KI eingesetzt und was hättest du ohne KI selbst herausgefunden?**
 
 
 ## Tag 2
+**Was war für dich neu?**
+
+**Wo bist du nicht weitergekommen und wie hast du den Blocker gelöst?**
+
+**Wo hast du KI eingesetzt und was hättest du ohne KI selbst herausgefunden?**
 
 
 ## Lizenz & Credits
