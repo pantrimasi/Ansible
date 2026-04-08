@@ -29,13 +29,6 @@
     enabled: true
   become: true
 
-- name: PostgreSQL configuration
-  template:
-    src: postgresql.conf.j2
-    dest: /etc/postgresql/16/main/postgresql.conf
-  notify: Restart postgresql
-  become: true
-
 - name: Restart postgresql
   service:
     name: postgresql
