@@ -35,8 +35,11 @@ Konfiguration mit einem Template angepasst
 
 ### Wahlapplikation 2: fail2ban
 - **Funktion:** Sicherheit
-- **Warum gewählt:** [Grund, z. B. Lernziel oder Projektanforderung]  
-- **Konfiguration:** Die Rolle installiert die Applikation, konfiguriert Dienste automatisch und sorgt dafür, dass sie über die Firewall erreichbar ist.
+- **Warum gewählt:** Da es mich auch interessiert hatte, wie bei der ersten Auswahl. Dazu ist es auch allgemein nützlich, wenn man Server Sicherheit verbessern will.
+- **Konfiguration:**
+Installation von fail2ban
+Autostart aktivieren
+erstellt eine Grundkonfiguration
 
 ## nmap-Ergebnis
 ```
