@@ -36,18 +36,18 @@ ansible-playbook -i inventory/hosts.ini site.yml
 - **Konfiguration:** Die Rolle installiert die Applikation, konfiguriert Dienste automatisch und sorgt dafür, dass sie über die Firewall erreichbar ist.
 
 ## nmap-Ergebnis
-
-`Starting Nmap 7.94SVN ( https://nmap.org ) at 2026-04-08 09:01 CEST
+```
+Starting Nmap 7.94SVN ( https://nmap.org ) at 2026-04-08 09:01 CEST
 Nmap scan report for zli-VMware-Virtual-Platform (192.168.146.154)
 Host is up (0.0000020s latency).
 Not shown: 997 closed tcp ports (reset)
 PORT    STATE SERVICE
 22/tcp  open  ssh
 80/tcp  open  http
-443/tcp open  https`
+443/tcp open  https
 
 `Nmap done: 1 IP address (1 host up) scanned in 0.06 seconds`
-
+```
 
 **Kommentar:** Die offenen Ports (22, 80, 443, 8080) entsprechen den freigegebenen Ports in unseren **UFW-Regeln**. Geschlossene Ports wie 3306 werden korrekt blockiert, sodass unautorisierte Zugriffe verhindert werden.
 
