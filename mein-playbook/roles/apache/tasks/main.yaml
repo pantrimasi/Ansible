@@ -34,7 +34,7 @@
 - name: Deploy index
   template:
     src: index.html.j2
-    dest: "{{ web_root }}"/auftrag.html
+    dest: "{{ web_root }}/auftrag.html"
     owner: www-data
     group: www-data
   become: true
