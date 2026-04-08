@@ -29,12 +29,6 @@
     enabled: true
   become: true
 
-- name: Restart postgresql
-  service:
-    name: postgresql
-    state: restarted
-  become: true
-
 - name: Wait for socket
   wait_for:
     path: /var/run/postgresql/.s.PGSQL.5432
@@ -53,4 +47,6 @@
   postgresql_user:
     name: "{{ postgres_user }}"
     password: "{{ postgres_password }}"
+    login_user: postgres
+    login_unix_socket: /var/run/postgresql
   become_user: postgres
