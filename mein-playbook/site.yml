@@ -4,3 +4,4 @@
     - common
     - apache
     - vhost
+    - ufw
