@@ -1,8 +1,8 @@
 <VirtualHost *:80>
     ServerName {{ ansible_hostname }}
-    DocumentRoot /var/www/my_site
+    DocumentRoot {{ web_root }}
 
-    <Directory /var/www/my_site>
+    <Directory {{ web_root }}>
         AllowOverride All
         Require all granted
     </Directory>
