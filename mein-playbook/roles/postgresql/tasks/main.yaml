@@ -29,6 +29,5 @@
   postgresql_user:
     name: "{{ postgres_user }}"
     password: "{{ postgres_password }}"
-    priv: "{{ postgres_db }}:ALL"
   become: true
   become_user: postgres
