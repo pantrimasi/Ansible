@@ -36,6 +36,18 @@
   notify: Restart postgresql
   become: true
 
+- name: Restart postgresql
+  service:
+    name: postgresql
+    state: restarted
+  become: true
+
+- name: Wait for socket
+  wait_for:
+    path: /var/run/postgresql/.s.PGSQL.5432
+    state: present
+    timeout: 10
+
 - name: Create database
   postgresql_db:
     name: "{{ postgres_db }}"
