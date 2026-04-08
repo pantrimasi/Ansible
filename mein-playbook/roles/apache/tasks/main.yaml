@@ -14,7 +14,7 @@
 
 - name: Create web dir
   file:
-    path: /var/www/my_site
+    path: "{{ web_root }}"
     state: directory
     owner: www-data
     group: www-data
@@ -24,22 +24,17 @@
 - name: Copy html files
   copy:
     src: "{{ item }}"
-    dest: "/var/www/my_site/{{ item }}"
+    dest: "{{ web_root }}/{{ item }}"
     owner: www-data
     group: www-data
     mode: '0644'
-  loop:
-    - index.html
-    - japan.html
-    - afrika.html
-    - python.html
-    - pn.html
+  loop: "{{ web_files }}"
   become: true
 
 - name: Deploy index
   template:
     src: index.html.j2
-    dest: /var/www/my_site/auftrag.html
+    dest: "{{ web_root }}"/auftrag.html
     owner: www-data
     group: www-data
   become: true

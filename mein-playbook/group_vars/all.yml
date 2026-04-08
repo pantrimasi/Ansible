@@ -1,1 +1,11 @@
 # Globale Variablen
+server_name: aServer
+
+web_root: /var/www/my_site
+
+web_files:
+  - index.html
+  - japan.html
+  - afrika.html
+  - python.html
+  - pn.html
