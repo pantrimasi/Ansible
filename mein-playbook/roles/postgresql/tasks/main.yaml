@@ -6,19 +6,16 @@
       - python3-psycopg2
     state: present
 
+- name: Remove old PostgreSQL configuration
+  file:
+    path: /etc/postgresql/16/main
+    state: absent
+  become: true
+
 - name: Remove old PostgreSQL directory
   file:
     path: /var/lib/postgresql/16/main
     state: absent
-  become: true
-
-- name: Create PostgreSQL data directory
-  file:
-    path: /var/lib/postgresql/16/main
-    state: directory
-    owner: postgres
-    group: postgres
-    mode: '0700'
   become: true
 
 - name: PostgreSQL cluster
@@ -49,5 +46,4 @@
   postgresql_user:
     name: "{{ postgres_user }}"
     password: "{{ postgres_password }}"
-  become: true
   become_user: postgres
