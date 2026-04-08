@@ -11,3 +11,10 @@
     state: started
     enabled: true
   become: true
+
+- name: Create jail local
+  template:
+    src: jail.local.j2
+    dest: /etc/fail2ban/jail.local
+  notify: Restart fail2ban
+  become: true
