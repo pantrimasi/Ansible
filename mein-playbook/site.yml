@@ -6,5 +6,5 @@
     - vhost
     - ufw
     - nmap
-    - lynis
     - postgresql
+    - lynis
