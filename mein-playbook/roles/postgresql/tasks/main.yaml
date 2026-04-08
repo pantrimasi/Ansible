@@ -6,6 +6,12 @@
       - python3-psycopg2
     state: present
 
+- name: Remove old PostgreSQL directory
+  file:
+    path: /var/lib/postgresql/16/main
+    state: absent
+  become: true
+
 - name: Create PostgreSQL data directory
   file:
     path: /var/lib/postgresql/16/main
