@@ -27,7 +27,7 @@ ansible-playbook -i inventory/hosts.ini site.yml
 ### Wahlapplikation 1: PostgreSQL
 **Funktion:** Datenbank  
 **Warum gewählt:** Da eine PostgreSQL-Datenbank gut zu einem Webserver passt und es mich interessiert hat, wie ich User und Datenbanken erstellen kann.  
-**Konfiguration:**   
+**Konfiguration:**
 1. Installation mit Ansible per apt
 2. Servicestarten und Autostart aktivieren
 3. Datenbank und Benutzer erstellen
@@ -36,7 +36,7 @@ ansible-playbook -i inventory/hosts.ini site.yml
 ### Wahlapplikation 2: fail2ban
 **Funktion:** Sicherheit  
 **Warum gewählt:** Da es mich auch interessiert hatte, wie bei der ersten Auswahl. Dazu ist es auch allgemein nützlich, wenn man Server Sicherheit verbessern will.  
-**Konfiguration:**  
+**Konfiguration:**
 1. Installation von fail2ban
 2. Autostart aktivieren
 3. erstellt eine Grundkonfiguration
