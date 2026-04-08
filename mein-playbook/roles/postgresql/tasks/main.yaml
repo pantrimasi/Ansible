@@ -22,9 +22,8 @@
   become: true
 
 - name: PostgreSQL cluster
-  shell: /usr/lib/postgresql/16/bin/initdb -D /var/lib/postgresql/16/main
-  become_user: postgres
-  ignore_errors: yes
+  command: pg_createcluster 16 main
+  become: true
 
 - name: postgresql running
   service:
