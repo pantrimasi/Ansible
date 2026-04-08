@@ -1,6 +1,6 @@
 - name: Install fail2ban
   apt:
-    name: Install fail2ban
+    name: fail2ban
     state: present
     update_cache: true
   become: true
