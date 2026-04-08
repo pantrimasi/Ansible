@@ -66,11 +66,13 @@ sudo systemctl reload apache2
 # Reflexion
 ## Tag 1
 ### Was war für dich neu?
+Natürlich war mir das ganze Thema Ansible neu, und auch die verschiedenen neuen Begriffe wie Roles, Tasks, Handler und Templates haben am Anfang ein bisschen verwirrt. Es war auch neu, dass ich wirklich mit YAML‑Files gearbeitet habe, da ich es mir früher mal angeschaut habe, aber nicht richtig. Ich habe den Zweck und Vorteile von Ansible gelernt. Also, dass es für die Automatisierung ist, man Konfigurationsdateien machen und hochladen kann oder dass es Agentenlos ist.
 
 ### Wo bist du nicht weitergekommen und wie hast du den Blocker gelöst?
+Zuerst hatte ich ein bisschen Probleme, das ganze Thema zu verstehen, vor allem mit dem Aufbau eines Playbooks. Nach einiger Zeit, nach ein bisschen Informieren und selber Ausprobieren, ging es dann wieder. Auch am Anfang von der 2. Aufgabe hatte ich ein bisschen Probleme, da ich nicht wirklich wusste, wie ich jetzt anfangen sollte. Auch hier habe ich versucht, mich möglichst gut zu informieren. Schlussendlich konnte ich dann auch bei der 2. Aufgabe Apache etc. installieren.
 
 ### Wo hast du KI eingesetzt und was hättest du ohne KI selbst herausgefunden?
-
+Ich habe KI direkt schon am Anfang benutzt, nämlich für die Erstellung eines README. Da wir irgendwann schon mal einen README-Prompt machen mussten, benutzte ich den, um eine Vorlage zu generieren. Was mir auch geholfen hat, ist KI für die Erklärung verschiedener Funktionen, der Struktur und Bedeutung zu helfen. Dazu benutzte ich KI auch während der Aufgaben, wenn Fehlercodes unverständlich waren oder wenn ich nicht mehr weiterkam.
 
 ## Tag 2
 ### Was war für dich neu?
