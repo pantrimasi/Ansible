@@ -7,7 +7,3 @@ web_files:
   - afrika.html
   - python.html
   - pn.html
-
-postgres_listen_addresses: '*'
-postgres_max_connections: 100
-postgres_shared_buffers: '128MB'
