@@ -6,22 +6,6 @@
       - python3-psycopg2
     state: present
 
-- name: Remove old PostgreSQL configuration
-  file:
-    path: /etc/postgresql/16/main
-    state: absent
-  become: true
-
-- name: Remove old PostgreSQL directory
-  file:
-    path: /var/lib/postgresql/16/main
-    state: absent
-  become: true
-
-- name: PostgreSQL cluster
-  command: pg_createcluster 16 main
-  become: true
-
 - name: postgresql running
   service:
     name: postgresql
