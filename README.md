@@ -65,17 +65,17 @@ sudo systemctl reload apache2
 ## Tag 1
 ### Was war für dich neu?
 
-**Wo bist du nicht weitergekommen und wie hast du den Blocker gelöst?**
+### Wo bist du nicht weitergekommen und wie hast du den Blocker gelöst?
 
-**Wo hast du KI eingesetzt und was hättest du ohne KI selbst herausgefunden?**
+### Wo hast du KI eingesetzt und was hättest du ohne KI selbst herausgefunden?
 
 
 ## Tag 2
-**Was war für dich neu?**
+### Was war für dich neu?
 
-**Wo bist du nicht weitergekommen und wie hast du den Blocker gelöst?**
+### Wo bist du nicht weitergekommen und wie hast du den Blocker gelöst?
 
-**Wo hast du KI eingesetzt und was hättest du ohne KI selbst herausgefunden?**
+### Wo hast du KI eingesetzt und was hättest du ohne KI selbst herausgefunden?
 
 
 ## Lizenz & Credits
