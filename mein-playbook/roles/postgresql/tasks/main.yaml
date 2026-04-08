@@ -16,7 +16,7 @@
   become: true
 
 - name: PostgreSQL cluster
-  command: /usr/lib/postgresql/16/bin/initdb -D /var/lib/postgresql/16/main
+  shell: /usr/lib/postgresql/16/bin/initdb -D /var/lib/postgresql/16/main
   become_user: postgres
   ignore_errors: yes
 
