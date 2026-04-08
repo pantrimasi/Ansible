@@ -15,9 +15,8 @@ Wenn ich UFW aktiviere, bevor SSH erlaubt worden ist, kann ich **mich selber** a
 Vor der Ausführung müssen die Variablen in **group_vars/all.yml** angepasst werden:
 
 - `server_name` – Hostname der VM  
-- `apache_ports` – Ports, die Apache nutzen soll  
-- `ufw_allowed_ports` – Ports, die die Firewall freigeben soll  
-- `wahlapplikation_1_config` / `wahlapplikation_2_config` – spezifische Einstellungen der Applikationen  
+- `web_root` – Verzeichnis, in dem die HTML-Dateien abgelegt werden
+- `web_files` – HTML-Dateien, die man hochladen will
 
 Um das Playbook auf einer frischen VM auszuführen, genügt ein Befehl:
 
