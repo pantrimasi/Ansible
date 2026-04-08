@@ -15,9 +15,8 @@ Wenn ich UFW aktiviere, bevor SSH erlaubt worden ist, kann ich **mich selber** a
 Vor der Ausführung müssen die Variablen in **group_vars/all.yml** angepasst werden:
 
 - `server_name` – Hostname der VM  
-- `apache_ports` – Ports, die Apache nutzen soll  
-- `ufw_allowed_ports` – Ports, die die Firewall freigeben soll  
-- `wahlapplikation_1_config` / `wahlapplikation_2_config` – spezifische Einstellungen der Applikationen  
+- `web_root` – Verzeichnis, in dem die HTML-Dateien abgelegt werden
+- `web_files` – HTML-Dateien, die man hochladen will
 
 Um das Playbook auf einer frischen VM auszuführen, genügt ein Befehl:
 
@@ -25,10 +24,14 @@ ansible-playbook -i inventory/hosts.ini site.yml
 
 ## Wahlapplikationen
 
-### Wahlapplikation 1: [Applikation 1 Name]
-- **Funktion:** [Kurzbeschreibung, z. B. Datenbank, Monitoring etc.]  
-- **Warum gewählt:** [Grund, z. B. praktische Anwendung für das Projekt]  
-- **Konfiguration:** Die Rolle installiert die Applikation, richtet Benutzerrechte ein und passt die Konfigurationsdateien gemäß `group_vars/all.yml` an.
+### Wahlapplikation 1: PostgreSQL
+- **Funktion:** Datenbank
+- **Warum gewählt:** Da eine PostgreSQL-Datenbank gut zu einem Webserver passt und es mich interessiert hat, wie ich User und Datenbanken erstellen kann.
+- **Konfiguration:** 
+Installation mit Ansible per apt
+Servicestarten und Autostart aktivieren
+Datenbank und Benutzer erstellen
+Konfiguration mit einem Template angepasst
 
 ### Wahlapplikation 2: [Applikation 2 Name]
 - **Funktion:** [Kurzbeschreibung, z. B. Web-App, Proxy etc.]  
@@ -50,21 +53,28 @@ Nmap done: 1 IP address (1 host up) scanned in 0.06 seconds
 ```
 Port 443 war zuerst nicht offen, weil kein Dienst auf diesem Port aktiv war, obwohl er in der Firewall erlaubt wurde. Ich habe danach **SSL in Apache aktiviert**, damit der Server auf Port 443 hört und der Port im Scan sichtbar wird.
 
+### Das habe ich gemacht mit folgenden Commands:
+```
+sudo a2enmod ssl
+sudo a2ensite my_site-ssl.conf
+sudo systemctl reload apache2
+```
+
 # Reflexion
 ## Tag 1
-**Was war für dich neu?**
+### Was war für dich neu?
 
-**Wo bist du nicht weitergekommen und wie hast du den Blocker gelöst?**
+### Wo bist du nicht weitergekommen und wie hast du den Blocker gelöst?
 
-**Wo hast du KI eingesetzt und was hättest du ohne KI selbst herausgefunden?**
+### Wo hast du KI eingesetzt und was hättest du ohne KI selbst herausgefunden?
 
 
 ## Tag 2
-**Was war für dich neu?**
+### Was war für dich neu?
 
-**Wo bist du nicht weitergekommen und wie hast du den Blocker gelöst?**
+### Wo bist du nicht weitergekommen und wie hast du den Blocker gelöst?
 
-**Wo hast du KI eingesetzt und was hättest du ohne KI selbst herausgefunden?**
+### Wo hast du KI eingesetzt und was hättest du ohne KI selbst herausgefunden?
 
 
 ## Lizenz & Credits
