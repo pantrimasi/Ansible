@@ -76,11 +76,13 @@ Ich habe KI direkt schon am Anfang benutzt, nämlich für die Erstellung eines R
 
 ## Tag 2
 ### Was war für dich neu?
+Heute konnte ich natürlich mehr lernen über Ansible allgemein, wenn auch nicht so viel wie gestern. Heute konnte ich vor allem nochmal spüren, dass Schreibfehler und die Reihenfolge von Tasks sehr wichtig sind. Allgemein verstehe ich das System viel klarer und genauer, womit ich heute je nachdem ein bisschen effizienter arbeiten konnte.
 
 ### Wo bist du nicht weitergekommen und wie hast du den Blocker gelöst?
+Bei PostgreSQL hatte ich viel und lange Probleme mit allem. Die Installation hatte Probleme mit dem Cluster und dazu hatte ich auch Berechtigungsprobleme. Ich habe viel Zeit damit verbracht, das zu lösen, und habe auch ein bisschen weggelassen, damit es schlussendlich funktionierte.
 
 ### Wo hast du KI eingesetzt und was hättest du ohne KI selbst herausgefunden?
-
+Ich habe KI heute vor allem zum Debuggen benutzt, da, wie gesagt, PostgreSQL viele Probleme hatte. Dazu habe ich KI auch wieder gebraucht, um verschiedene Funktionen zu verstehen. 
 
 ## Lizenz & Credits
 
