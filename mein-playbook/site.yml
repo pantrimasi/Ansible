@@ -7,4 +7,4 @@
     - ufw
     - nmap
     - postgresql
-    - lynis
+    - fail2ban

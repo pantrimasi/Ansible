@@ -1,0 +1,13 @@
+- name: Install fail2ban
+  apt:
+    name: Install fail2ban
+    state: present
+    update_cache: true
+  become: true
+
+- name: fail2ban running
+  service:
+    name: fail2ban
+    state: started
+    enabled: true
+  become: true
