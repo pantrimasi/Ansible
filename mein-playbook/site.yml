@@ -3,7 +3,6 @@
   roles:
     - common
     - apache
-    - vhost
     - ufw
     - nmap
     - postgresql

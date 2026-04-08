@@ -39,6 +39,13 @@
     group: www-data
   become: true
 
+- name: Deploy vhost
+  template:
+    src: vhost.conf.j2
+    dest: /etc/apache2/sites-available/my_site.conf
+  notify: Reload apache
+  become: true
+
 - name: Enable site
   command: a2ensite my_site.conf
   notify: Reload apache
