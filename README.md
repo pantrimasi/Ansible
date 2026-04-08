@@ -25,10 +25,14 @@ ansible-playbook -i inventory/hosts.ini site.yml
 
 ## Wahlapplikationen
 
-### Wahlapplikation 1: [Applikation 1 Name]
-- **Funktion:** [Kurzbeschreibung, z. B. Datenbank, Monitoring etc.]  
-- **Warum gewählt:** [Grund, z. B. praktische Anwendung für das Projekt]  
-- **Konfiguration:** Die Rolle installiert die Applikation, richtet Benutzerrechte ein und passt die Konfigurationsdateien gemäß `group_vars/all.yml` an.
+### Wahlapplikation 1: PostgreSQL
+- **Funktion:** Datenbank
+- **Warum gewählt:** Da eine PostgreSQL-Datenbank gut zu einem Webserver passt und es mich interessiert hat, wie ich User und Datenbanken erstellen kann.
+- **Konfiguration:** 
+Installation mit Ansible per apt
+Servicestarten und Autostart aktivieren
+Datenbank und Benutzer erstellen
+Konfiguration mit einem Template angepasst
 
 ### Wahlapplikation 2: [Applikation 2 Name]
 - **Funktion:** [Kurzbeschreibung, z. B. Web-App, Proxy etc.]  
