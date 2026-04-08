@@ -7,7 +7,7 @@
     state: present
 
 - name: Ensure PostgreSQL cluster exists
-  command: pg_ctlcluster 14 main start
+  command: pg_ctlcluster 16 main start
   become_user: postgres
   ignore_errors: yes
 
@@ -37,5 +37,3 @@
     password: "{{ postgres_password }}"
   become: true
   become_user: postgres
-
-
