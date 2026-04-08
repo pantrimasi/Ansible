@@ -54,6 +54,13 @@ Nmap done: 1 IP address (1 host up) scanned in 0.06 seconds
 ```
 Port 443 war zuerst nicht offen, weil kein Dienst auf diesem Port aktiv war, obwohl er in der Firewall erlaubt wurde. Ich habe danach **SSL in Apache aktiviert**, damit der Server auf Port 443 hört und der Port im Scan sichtbar wird.
 
+### Das habe ich gemacht mit folgenden Commands:
+```
+sudo a2enmod ssl
+sudo a2ensite my_site-ssl.conf
+sudo systemctl reload apache2
+```
+
 # Reflexion
 ## Tag 1
 **Was war für dich neu?**
