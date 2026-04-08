@@ -11,3 +11,24 @@
     state: started
     enabled: true
   become: true
+
+- name: PostgreSQL configuration
+  template:
+    src: postgresql.conf.j2
+    dest: /etc/postgresql/15/main/postgresql.conf
+  notify: Restart postgresql
+  become: true
+
+- name: Create database
+  postgresql_db:
+    name: "{{ postgres_db }}"
+  become: true
+  become_user: postgres
+
+- name: Create user
+  postgresql_user:
+    name: "{{ postgres_user }}"
+    password: "{{ postgres_password }}"
+    priv: "{{ postgres_db }}:ALL"
+  become: true
+  become_user: postgres
