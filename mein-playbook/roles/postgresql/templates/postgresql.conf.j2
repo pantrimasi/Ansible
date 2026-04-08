@@ -1,4 +1,5 @@
 # PostgreSQL main config
-listen_addresses = '*'
-max_connections = 100
-shared_buffers = 128MB
+
+listen_addresses = '{{ postgres_listen_addresses }}'
+max_connections = {{ postgres_max_connections }}
+shared_buffers = '{{ postgres_shared_buffers }}'
