@@ -8,7 +8,7 @@ Dieses Projekt enthält ein selbst erstelltes **Ansible-Playbook**, das verschie
 
 ## Ausführung
 
-Vor der Ausführung müssen die Variablen in **group_vars/all.yml** angepasst werden, z. B.:
+Vor der Ausführung müssen die Variablen in **group_vars/all.yml** angepasst werden:
 
 - `server_name` – Hostname der VM  
 - `apache_ports` – Ports, die Apache nutzen soll  
