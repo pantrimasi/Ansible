@@ -50,9 +50,6 @@ PORT    STATE SERVICE
 ```
 Port 443 war zuerst nicht offen, weil kein Dienst auf diesem Port aktiv war, obwohl er in der Firewall erlaubt wurde. Ich habe danach **SSL in Apache aktiviert**, damit der Server auf Port 443 hört und der Port im Scan sichtbar wird.
 
-
-**Kommentar:** Die offenen Ports (22, 80, 443, 8080) entsprechen den freigegebenen Ports in unseren **UFW-Regeln**. Geschlossene Ports wie 3306 werden korrekt blockiert, sodass unautorisierte Zugriffe verhindert werden.
-
 ## Lizenz & Credits
 
 Dieses Projekt wurde von **PantriMasi** erstellt.  
