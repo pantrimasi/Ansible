@@ -1,3 +1,9 @@
+- name: Ensure PostgreSQL cluster exists
+  command: pg_createcluster 16 main --start
+  args:
+    creates: /var/lib/postgresql/16/main
+  become: true
+
 - name: Install postgresql
   apt:
     name: postgresql
