@@ -33,8 +33,8 @@ Servicestarten und Autostart aktivieren
 Datenbank und Benutzer erstellen
 Konfiguration mit einem Template angepasst
 
-### Wahlapplikation 2: [Applikation 2 Name]
-- **Funktion:** [Kurzbeschreibung, z. B. Web-App, Proxy etc.]  
+### Wahlapplikation 2: fail2ban
+- **Funktion:** Sicherheit
 - **Warum gewählt:** [Grund, z. B. Lernziel oder Projektanforderung]  
 - **Konfiguration:** Die Rolle installiert die Applikation, konfiguriert Dienste automatisch und sorgt dafür, dass sie über die Firewall erreichbar ist.
 
