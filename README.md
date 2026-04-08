@@ -50,6 +50,13 @@ PORT    STATE SERVICE
 ```
 Port 443 war zuerst nicht offen, weil kein Dienst auf diesem Port aktiv war, obwohl er in der Firewall erlaubt wurde. Ich habe danach **SSL in Apache aktiviert**, damit der Server auf Port 443 hört und der Port im Scan sichtbar wird.
 
+# Reflexion
+## Tag 1
+
+
+## Tag 2
+
+
 ## Lizenz & Credits
 
 Dieses Projekt wurde von **PantriMasi** erstellt.  
