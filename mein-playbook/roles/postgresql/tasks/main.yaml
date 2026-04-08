@@ -1,9 +1,15 @@
 - name: Install postgresql
   apt:
-    name: postgresql
+    name:
+      - postgresql
+      - postgresql-contrib
+      - python3-psycopg2
     state: present
-    update_cache: true
-  become: true
+
+- name: Ensure PostgreSQL cluster exists
+  command: pg_ctlcluster 14 main start
+  become_user: postgres
+  ignore_errors: yes
 
 - name: postgresql running
   service:
@@ -22,7 +28,7 @@
 - name: Create database
   postgresql_db:
     name: "{{ postgres_db }}"
-  become: true
+    state: present
   become_user: postgres
 
 - name: Create user
@@ -31,3 +37,5 @@
     password: "{{ postgres_password }}"
   become: true
   become_user: postgres
+
+
