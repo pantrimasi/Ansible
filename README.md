@@ -6,6 +6,10 @@
 
 Dieses Projekt enthält ein selbst erstelltes **Ansible-Playbook**, das verschiedene Dienste und Anwendungen auf einer frischen VM automatisch installiert und konfiguriert. Das Playbook ist modular aufgebaut und nutzt Rollen für Common-Settings, Apache, virtuelle Hosts, Firewall, Netzwerkanalyse (Nmap) sowie zwei wählbare Applikationen. Das Projekt befindet sich aktuell in Entwicklung.
 
+## Was passiert, wenn du UFW aktivierst, bevor du SSH erlaubt hast? 
+
+Wenn ich UFW aktiviere, bevor SSH erlaubt worden ist, kann ich **mich selber** aus der VM **aussperren**.
+
 ## Ausführung
 
 Vor der Ausführung müssen die Variablen in **group_vars/all.yml** angepasst werden:
