@@ -4,10 +4,3 @@
     state: present
     update_cache: true
   become: true
-
-- name: Nmap running
-  service:
-    name: nmap
-    state: started
-    enabled: true
-  become: true
